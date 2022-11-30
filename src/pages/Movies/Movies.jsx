@@ -1,13 +1,15 @@
-const Movies = props => {
+import MovieSearchForm from 'components/MovieSearchForm/MovieSearchForm';
+import MoviesList from 'components/MoviesList/MoviesList';
+import { useState } from 'react';
+
+const Movies = () => {
+  const [movies, setMovies] = useState([]);
+
   return (
-    <div>
-      <form>
-        <label>
-          <input type="text" autoComplete="false" />
-        </label>
-        <button type="submit">search</button>
-      </form>
-    </div>
+    <>
+      <MovieSearchForm setMovies={setMovies} />
+      <MoviesList movies={movies} />
+    </>
   );
 };
 
