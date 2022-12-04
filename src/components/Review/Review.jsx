@@ -12,8 +12,6 @@ const Review = props => {
     getMovieReview(movieId).then(({ results }) => setReview(results));
   }, [movieId]);
 
-  console.log(review);
-
   return (
     <div>
       {review.length > 0
@@ -27,7 +25,7 @@ const Review = props => {
               </div>
             </div>
           ))
-        : 'does not have any review'}
+        : 'there are no reviews'}
     </div>
   );
 };
