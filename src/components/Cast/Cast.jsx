@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieActors } from 'API/moviesdbAPI';
 
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Cast = props => {
   const [cast, setCast] = useState([]);
