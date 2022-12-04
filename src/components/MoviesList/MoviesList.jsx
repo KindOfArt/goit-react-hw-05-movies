@@ -6,8 +6,13 @@ const MoviesList = ({ movies }) => {
   return (
     <div>
       <ul>
-        {movies.map(({ id, title }) => (
-          <MoviesItem key={id} id={id} title={title} />
+        {movies.map(({ id, title, release_date }) => (
+          <MoviesItem
+            key={id}
+            id={id}
+            title={title}
+            release_date={release_date}
+          />
         ))}
       </ul>
     </div>

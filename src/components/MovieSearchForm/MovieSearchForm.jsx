@@ -1,30 +1,36 @@
-import { searchMovies } from 'API/moviesdbAPI';
-import { useForm } from 'react-hook-form';
-
 // import PropTypes from 'prop-types';
 
-const MovieSearchForm = ({ setMovies }) => {
-  const { handleSubmit, register } = useForm({ defaultValues: '' });
+import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-  const submit = ({ searchQuery }) => {
-    if (!searchQuery) {
-      return;
-    }
+const MovieSearchForm = ({ getQuery }) => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [, setSearchParams] = useSearchParams();
 
-    searchMovies(searchQuery)
-      .then(({ results }) => results.map(({ id, title }) => ({ id, title })))
-      .then(setMovies);
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    getQuery(searchQuery);
+
+    setSearchQuery('');
   };
+
   return (
     <div>
-      <form onSubmit={handleSubmit(submit)}>
+      <form onSubmit={handleSubmit}>
         <label>
           Search a movie:
           <input
+            value={searchQuery}
+            onChange={e => {
+              const value = e.currentTarget.value;
+              setSearchQuery(value);
+              setSearchParams(value !== '' ? { q: value } : {});
+            }}
             type="text"
-            placeholder="movie name"
+            name="movies"
+            placeholder="search query"
             autoComplete="off"
-            {...register('searchQuery')}
           />
         </label>
         <div>

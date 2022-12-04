@@ -4,8 +4,15 @@ import TrendingItem from 'components/TrendingItem/TrendingItem';
 const TrendingList = ({ trendingMovies }) => {
   return (
     <ul>
-      {trendingMovies.map(({ id, title }) => {
-        return <TrendingItem key={id} id={id} title={title} />;
+      {trendingMovies.map(({ id, title, release_date }) => {
+        return (
+          <TrendingItem
+            key={id}
+            id={id}
+            title={title}
+            release_date={release_date}
+          />
+        );
       })}
     </ul>
   );

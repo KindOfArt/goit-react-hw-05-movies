@@ -7,7 +7,7 @@ export default function useTrendingMovies(defaultValue) {
   const filter = array =>
     array
       .filter(({ media_type: mediaType }) => mediaType === 'movie')
-      .map(({ id, title }) => ({ id, title }));
+      .map(({ id, title, release_date }) => ({ id, title, release_date }));
 
   useEffect(() => {
     getTrendingMovie().then(({ results }) => setState(filter(results)));
