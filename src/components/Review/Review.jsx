@@ -1,16 +1,9 @@
-import { getMovieReview } from 'API/moviesdbAPI';
-import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 // import PropTypes from 'prop-types';
 
+import useMovieReview from 'hooks/useMovieReview';
+
 const Review = props => {
-  const [review, setReview] = useState([]);
-
-  const { movieId } = useParams();
-
-  useEffect(() => {
-    getMovieReview(movieId).then(({ results }) => setReview(results));
-  }, [movieId]);
+  const [review] = useMovieReview([]);
 
   return (
     <div>

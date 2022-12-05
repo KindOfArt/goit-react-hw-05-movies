@@ -1,4 +1,5 @@
 import useMovieDetails from 'hooks/useMovieDetails';
+import { Suspense } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 
 const links = [
@@ -29,7 +30,7 @@ const MovieDetails = () => {
                 />
               </div>
             ) : (
-              'Poster'
+              <div className="image">Poster</div>
             )}
           </div>
           <div className="description-thumb">
@@ -61,7 +62,9 @@ const MovieDetails = () => {
               </div>
             ))}
           </div>
-          <Outlet />
+          <Suspense fallback={null}>
+            <Outlet />
+          </Suspense>
         </div>
       </div>
     </>

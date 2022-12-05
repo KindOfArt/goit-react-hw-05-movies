@@ -1,6 +1,7 @@
-import NavLinkList from 'components/NavLinkList/NavLinkList';
-import React from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
+
+import NavLinkList from 'components/NavLinkList/NavLinkList';
 
 const MainNavigate = () => {
   return (
@@ -8,7 +9,9 @@ const MainNavigate = () => {
       <header>
         <NavLinkList />
       </header>
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };

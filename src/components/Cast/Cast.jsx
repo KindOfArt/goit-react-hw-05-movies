@@ -1,16 +1,9 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getMovieActors } from 'API/moviesdbAPI';
+import useMovieCast from 'hooks/useMovieCast';
 
 // import PropTypes from 'prop-types';
 
 const Cast = props => {
-  const [cast, setCast] = useState([]);
-  const { movieId } = useParams();
-
-  useEffect(() => {
-    getMovieActors(movieId).then(({ cast }) => setCast(cast));
-  }, [movieId]);
+  const [cast] = useMovieCast([]);
 
   return (
     <div>
