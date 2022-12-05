@@ -1,11 +1,13 @@
+import AdditionalInfo from 'components/AdditionalInfo/AdditionalInfo';
+import Genres from 'components/Genres/Genres';
+import LinkGoBack from 'components/LinkGoBack/LinkGoBack';
+import Overview from 'components/Overview/Overview';
+import Popularity from 'components/Popularity/Popularity';
+import PosterImage from 'components/PosterImage/PosterImage';
+import Status from 'components/Status/Status';
+import Title from 'components/Title/Title';
 import useMovieDetails from 'hooks/useMovieDetails';
-import { Suspense } from 'react';
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
-
-const links = [
-  { href: 'cast', text: 'Cast' },
-  { href: 'review', text: 'Review' },
-];
+import { useLocation } from 'react-router-dom';
 
 const MovieDetails = () => {
   const [
@@ -17,55 +19,18 @@ const MovieDetails = () => {
   return (
     <>
       <div className="container">
-        <div className="link-go-back">
-          <NavLink to={backLinkHref}>Go Back</NavLink>
-        </div>
+        <LinkGoBack backLinkHref={backLinkHref} />
         <div className="movie-detail-thumb">
-          <div className="image">
-            {poster_path ? (
-              <div>
-                <img
-                  src={`https://image.tmdb.org/t/p/w200${poster_path}`}
-                  alt={title}
-                />
-              </div>
-            ) : (
-              <div className="image">Poster</div>
-            )}
-          </div>
+          <PosterImage poster_path={poster_path} />
           <div className="description-thumb">
-            <div className="title">
-              <h1>
-                {title}
-                {release_date && <span>({release_date.slice(0, 4)})</span>}
-              </h1>
-            </div>
-            <div className="status">
-              <span>{status}</span>
-            </div>
-            <div className="popularity">{popularity}</div>
-            <div className="overwiew">
-              <p>{overview}</p>
-            </div>
-            <div className="genres">
-              {genres && genres.map(({ name }) => name).join(' ')}
-            </div>
+            <Title title={title} release_date={release_date} />
+            <Status status={status} />
+            <Popularity popularity={popularity} />
+            <Overview overview={overview} />
+            <Genres genres={genres} />
           </div>
         </div>
-        <div className="additional-info">
-          <div className="links">
-            {links.map(({ href, text }) => (
-              <div key={href}>
-                <NavLink to={href} state={{ from: backLinkHref }}>
-                  {text}
-                </NavLink>
-              </div>
-            ))}
-          </div>
-          <Suspense fallback={null}>
-            <Outlet />
-          </Suspense>
-        </div>
+        <AdditionalInfo backLinkHref={backLinkHref} />
       </div>
     </>
   );

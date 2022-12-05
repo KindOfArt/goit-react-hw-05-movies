@@ -7,8 +7,7 @@ const TrendingItem = ({ id, title, release_date }) => {
   return (
     <li key={id}>
       <NavLink to={`movies/${id}`} state={{ from: location }}>
-        {title}
-        {release_date && <span>({release_date.slice(0, 4)})</span>}
+        {title} {release_date && <span>({release_date.slice(0, 4)})</span>}
       </NavLink>
     </li>
   );
