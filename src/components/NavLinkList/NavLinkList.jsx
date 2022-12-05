@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { List, ListItem } from './NavLinkList.styled';
 
 const navItems = [
   { href: '/', text: 'Home' },
@@ -7,15 +8,15 @@ const navItems = [
 
 const NavLinkList = props => {
   return (
-    <ul>
+    <List>
       {navItems.map(({ href, text }) => {
         return (
-          <li key={href}>
+          <ListItem key={href}>
             <NavLink to={href}>{text}</NavLink>
-          </li>
+          </ListItem>
         );
       })}
-    </ul>
+    </List>
   );
 };
 

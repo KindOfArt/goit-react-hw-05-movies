@@ -6,3 +6,7 @@ export const List = styled.ul`
   gap: 10px;
   list-style-type: none;
 `;
+
+export const ListItem = styled.li`
+  font-size: 26px;
+`;

@@ -33,7 +33,7 @@ ol > li {
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
