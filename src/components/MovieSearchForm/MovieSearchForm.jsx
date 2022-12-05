@@ -2,6 +2,14 @@
 
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import {
+  Button,
+  ButtonThumb,
+  Form,
+  FormContainer,
+  Input,
+  Label,
+} from './MovieSearchForm.styled';
 
 const MovieSearchForm = ({ getQuery }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,11 +24,11 @@ const MovieSearchForm = ({ getQuery }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
+    <FormContainer>
+      <Form onSubmit={handleSubmit}>
+        <Label>
           Search a movie:
-          <input
+          <Input
             value={searchQuery}
             onChange={e => {
               const value = e.currentTarget.value;
@@ -32,12 +40,12 @@ const MovieSearchForm = ({ getQuery }) => {
             placeholder="search query"
             autoComplete="off"
           />
-        </label>
-        <div>
-          <button type="submit">Search</button>
-        </div>
-      </form>
-    </div>
+        </Label>
+        <ButtonThumb>
+          <Button type="submit">Search</Button>
+        </ButtonThumb>
+      </Form>
+    </FormContainer>
   );
 };
 

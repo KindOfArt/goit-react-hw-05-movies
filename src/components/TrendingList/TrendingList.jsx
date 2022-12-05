@@ -1,10 +1,11 @@
 import TrendingItem from 'components/TrendingItem/TrendingItem';
-import { TrandingList } from './TrandingList.styled';
+import { List } from './TrandingList.styled';
+
 // import PropTypes from 'prop-types';
 
 const TrendingList = ({ trendingMovies }) => {
   return (
-    <TrandingList>
+    <List>
       {trendingMovies.map(({ id, title, release_date }) => {
         return (
           <TrendingItem
@@ -15,7 +16,7 @@ const TrendingList = ({ trendingMovies }) => {
           />
         );
       })}
-    </TrandingList>
+    </List>
   );
 };
 

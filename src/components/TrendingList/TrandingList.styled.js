@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-export const TrandingList = styled.ul`
+export const List = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  margin-top: 10px;
+  gap: 6px;
+  padding-top: 20px;
   padding-left: 30px;
 `;

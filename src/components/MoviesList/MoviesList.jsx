@@ -1,11 +1,13 @@
 import MoviesItem from 'components/MoviesItem/MoviesItem';
+import { List } from 'components/TrendingList/TrandingList.styled';
+import { ListThumb } from './MovieList.styled';
 
 // import PropTypes from 'prop-types';
 
 const MoviesList = ({ movies }) => {
   return (
-    <div>
-      <ul>
+    <ListThumb>
+      <List>
         {movies.map(({ id, title, release_date }) => (
           <MoviesItem
             key={id}
@@ -14,8 +16,8 @@ const MoviesList = ({ movies }) => {
             release_date={release_date}
           />
         ))}
-      </ul>
-    </div>
+      </List>
+    </ListThumb>
   );
 };
 

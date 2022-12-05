@@ -1,5 +1,5 @@
 import InfoLinks from 'components/InfoLinks/InfoLinks';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
