@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import { InfoList } from './InfoLinks.styled';
 
