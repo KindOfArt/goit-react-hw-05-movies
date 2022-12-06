@@ -2,7 +2,7 @@ import MoviesItem from 'components/MoviesItem/MoviesItem';
 import { List } from 'components/TrendingList/TrandingList.styled';
 import { ListThumb } from './MovieList.styled';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const MoviesList = ({ movies }) => {
   return (
@@ -21,6 +21,8 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-MoviesList.propTypes = {};
+MoviesList.propTypes = {
+  movies: PropTypes.array.isRequired,
+};
 
 export default MoviesList;

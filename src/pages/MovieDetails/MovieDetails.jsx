@@ -7,7 +7,14 @@ import PosterImage from 'components/PosterImage/PosterImage';
 import Status from 'components/Status/Status';
 import Title from 'components/Title/Title';
 import useMovieDetails from 'hooks/useMovieDetails';
+import { memo } from 'react';
 import { useLocation } from 'react-router-dom';
+import {
+  DetailContainer,
+  DescriptionThumb,
+  MovieDetailsThumb,
+  InfoThumb,
+} from './MovieDetails.styled.js';
 
 const MovieDetails = () => {
   const [
@@ -17,23 +24,23 @@ const MovieDetails = () => {
   const backLinkHref = location.state?.from ?? '/';
 
   return (
-    <>
-      <div className="container">
-        <LinkGoBack backLinkHref={backLinkHref} />
-        <div className="movie-detail-thumb">
-          <PosterImage poster_path={poster_path} />
-          <div className="description-thumb">
-            <Title title={title} release_date={release_date} />
-            <Status status={status} />
-            <Popularity popularity={popularity} />
-            <Overview overview={overview} />
-            <Genres genres={genres} />
-          </div>
-        </div>
+    <DetailContainer>
+      <LinkGoBack backLinkHref={backLinkHref} />
+      <MovieDetailsThumb>
+        <PosterImage poster_path={poster_path} />
+        <DescriptionThumb>
+          <Title title={title} release_date={release_date} />
+          <Status status={status} />
+          <Popularity popularity={popularity} />
+          <Overview overview={overview} />
+          <Genres genres={genres} />
+        </DescriptionThumb>
+      </MovieDetailsThumb>
+      <InfoThumb>
         <AdditionalInfo backLinkHref={backLinkHref} />
-      </div>
-    </>
+      </InfoThumb>
+    </DetailContainer>
   );
 };
 
-export default MovieDetails;
+export default memo(MovieDetails);

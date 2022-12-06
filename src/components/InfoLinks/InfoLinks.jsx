@@ -1,5 +1,6 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { InfoList } from './InfoLinks.styled';
 
 const links = [
   { href: 'cast', text: 'Cast' },
@@ -8,7 +9,7 @@ const links = [
 
 const InfoLinks = ({ backLinkHref }) => {
   return (
-    <div>
+    <InfoList>
       {links.map(({ href, text }) => (
         <div key={href}>
           <NavLink to={href} state={{ from: backLinkHref }}>
@@ -16,7 +17,7 @@ const InfoLinks = ({ backLinkHref }) => {
           </NavLink>
         </div>
       ))}
-    </div>
+    </InfoList>
   );
 };
 

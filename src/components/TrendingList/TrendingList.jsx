@@ -1,7 +1,7 @@
 import TrendingItem from 'components/TrendingItem/TrendingItem';
 import { List } from './TrandingList.styled';
 
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const TrendingList = ({ trendingMovies }) => {
   return (
@@ -20,6 +20,8 @@ const TrendingList = ({ trendingMovies }) => {
   );
 };
 
-TrendingList.propTypes = {};
+TrendingList.propTypes = {
+  trendingMovies: PropTypes.array.isRequired,
+};
 
 export default TrendingList;

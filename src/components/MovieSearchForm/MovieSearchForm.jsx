@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
@@ -49,6 +49,8 @@ const MovieSearchForm = ({ getQuery }) => {
   );
 };
 
-MovieSearchForm.propTypes = {};
+MovieSearchForm.propTypes = {
+  getQuery: PropTypes.func.isRequired,
+};
 
 export default MovieSearchForm;

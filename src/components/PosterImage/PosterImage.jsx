@@ -1,16 +1,17 @@
 import React from 'react';
+import { Poster, PosterThumb } from './PosterImage.styled';
 // import PropTypes from 'prop-types';
 
 const PosterImage = ({ poster_path }) => {
   return (
     <>
       {poster_path ? (
-        <div>
-          <img
+        <PosterThumb>
+          <Poster
             src={`https://image.tmdb.org/t/p/w200${poster_path}`}
             alt="poster_photo"
           />
-        </div>
+        </PosterThumb>
       ) : (
         <div className="image">Poster</div>
       )}
