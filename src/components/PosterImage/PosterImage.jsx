@@ -1,6 +1,6 @@
 import React from 'react';
 import { Poster, PosterThumb } from './PosterImage.styled';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const PosterImage = ({ poster_path }) => {
   return (
@@ -19,6 +19,8 @@ const PosterImage = ({ poster_path }) => {
   );
 };
 
-PosterImage.propTypes = {};
+PosterImage.propTypes = {
+  poster_path: PropTypes.string.isRequired,
+};
 
 export default PosterImage;

@@ -7,6 +7,6 @@ export const PosterThumb = styled.div`
 export const Poster = styled.img`
   display: block;
   width: 250px;
-  height: 100%;
+  height: auto;
   border-radius: 10px;
 `;

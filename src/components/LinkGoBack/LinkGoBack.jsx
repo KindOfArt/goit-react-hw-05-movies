@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StyledGoBack } from './LinkGoBack.styled';
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const LinkGoBack = ({ backLinkHref }) => {
   return (
     <div>
-      <StyledGoBack to={backLinkHref}>Go Back</StyledGoBack>
+      <StyledLink to={backLinkHref}>Go Back</StyledLink>
     </div>
   );
 };
@@ -15,3 +16,15 @@ LinkGoBack.propTypes = {
 };
 
 export default LinkGoBack;
+
+const StyledLink = styled(NavLink)`
+  display: inline-block;
+  margin-bottom: 15px;
+  padding: 8px;
+  border-radius: 10px;
+  color: white;
+  background-color: black;
+  &:hover {
+    scale: 1.1;
+  }
+`;

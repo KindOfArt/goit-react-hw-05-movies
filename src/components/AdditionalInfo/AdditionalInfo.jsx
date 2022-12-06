@@ -1,5 +1,5 @@
 import InfoLinks from 'components/InfoLinks/InfoLinks';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 
@@ -14,6 +14,8 @@ const AdditionalInfo = ({ backLinkHref }) => {
   );
 };
 
-AdditionalInfo.propTypes = {};
+AdditionalInfo.propTypes = {
+  backLinkHref: PropTypes.object.isRequired,
+};
 
 export default AdditionalInfo;

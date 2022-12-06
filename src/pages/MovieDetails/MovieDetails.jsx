@@ -19,7 +19,7 @@ import {
 const MovieDetails = () => {
   const [
     { title, status, overview, poster_path, genres, release_date, popularity },
-  ] = useMovieDetails({});
+  ] = useMovieDetails([]);
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 
@@ -27,13 +27,16 @@ const MovieDetails = () => {
     <DetailContainer>
       <LinkGoBack backLinkHref={backLinkHref} />
       <MovieDetailsThumb>
-        <PosterImage poster_path={poster_path} />
+        {poster_path && <PosterImage poster_path={poster_path} />}
+
         <DescriptionThumb>
-          <Title title={title} release_date={release_date} />
-          <Status status={status} />
-          <Popularity popularity={popularity} />
-          <Overview overview={overview} />
-          <Genres genres={genres} />
+          {title && release_date && (
+            <Title title={title} release_date={release_date} />
+          )}
+          {status && <Status status={status} />}
+          {popularity && <Popularity popularity={popularity} />}
+          {overview && <Overview overview={overview} />}
+          {genres && genres.length > 0 && <Genres genres={genres} />}
         </DescriptionThumb>
       </MovieDetailsThumb>
       <InfoThumb>

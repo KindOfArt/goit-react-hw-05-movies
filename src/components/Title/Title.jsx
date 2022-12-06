@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Title = ({ title, release_date }) => {
   return (
@@ -11,6 +11,9 @@ const Title = ({ title, release_date }) => {
   );
 };
 
-Title.propTypes = {};
+Title.propTypes = {
+  title: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+};
 
 export default Title;

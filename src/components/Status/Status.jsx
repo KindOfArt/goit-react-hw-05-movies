@@ -1,14 +1,18 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Status = ({ status }) => {
   return (
     <div>
-      <span>{status}</span>
+      <span>
+        <b>Status:</b> {status}
+      </span>
     </div>
   );
 };
 
-Status.propTypes = {};
+Status.propTypes = {
+  status: PropTypes.string.isRequired,
+};
 
 export default Status;

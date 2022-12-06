@@ -1,28 +1,53 @@
 // import PropTypes from 'prop-types';
 
 import useMovieReview from 'hooks/useMovieReview';
+import styled from 'styled-components';
 
 const Review = props => {
   const [review] = useMovieReview([]);
 
   return (
-    <div>
+    <ReviewThumb>
       {review.length > 0
         ? review.map(({ id, author, content }) => (
-            <div key={id}>
-              <div>
-                <p>{author}</p>
-              </div>
-              <div>
-                <p>{content}</p>
-              </div>
-            </div>
+            <DescriptionThumb key={id}>
+              <AuthorThumb>
+                <Author>Author: </Author>
+                {author}
+              </AuthorThumb>
+              <ContentThumb>
+                <Content>Description: </Content>
+                {content}
+              </ContentThumb>
+            </DescriptionThumb>
           ))
         : 'there are no reviews'}
-    </div>
+    </ReviewThumb>
   );
 };
 
 Review.propTypes = {};
 
 export default Review;
+
+const ReviewThumb = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+const DescriptionThumb = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+`;
+const AuthorThumb = styled.div``;
+const ContentThumb = styled.div``;
+const Author = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+`;
+const Content = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+`;
