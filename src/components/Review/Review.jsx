@@ -40,6 +40,9 @@ const DescriptionThumb = styled.div`
   align-items: flex-start;
   flex-direction: column;
   gap: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px 1px black;
 `;
 const AuthorThumb = styled.div``;
 const ContentThumb = styled.div``;
