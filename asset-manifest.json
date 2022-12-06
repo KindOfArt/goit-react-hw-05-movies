@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.115238bb.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.db3edb59.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.4303028e.js",
     "static/js/283.67e2398f.chunk.js": "/goit-react-hw-05-movies/static/js/283.67e2398f.chunk.js",
-    "static/js/794.a17d5bd5.chunk.js": "/goit-react-hw-05-movies/static/js/794.a17d5bd5.chunk.js",
-    "static/js/654.df23b9a4.chunk.js": "/goit-react-hw-05-movies/static/js/654.df23b9a4.chunk.js",
-    "static/js/837.bc1efad3.chunk.js": "/goit-react-hw-05-movies/static/js/837.bc1efad3.chunk.js",
+    "static/js/859.24bd2fe2.chunk.js": "/goit-react-hw-05-movies/static/js/859.24bd2fe2.chunk.js",
+    "static/js/654.a4b80d71.chunk.js": "/goit-react-hw-05-movies/static/js/654.a4b80d71.chunk.js",
+    "static/js/837.c4333e27.chunk.js": "/goit-react-hw-05-movies/static/js/837.c4333e27.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.115238bb.css.map": "/goit-react-hw-05-movies/static/css/main.115238bb.css.map",
-    "main.db3edb59.js.map": "/goit-react-hw-05-movies/static/js/main.db3edb59.js.map",
+    "main.4303028e.js.map": "/goit-react-hw-05-movies/static/js/main.4303028e.js.map",
     "283.67e2398f.chunk.js.map": "/goit-react-hw-05-movies/static/js/283.67e2398f.chunk.js.map",
-    "794.a17d5bd5.chunk.js.map": "/goit-react-hw-05-movies/static/js/794.a17d5bd5.chunk.js.map",
-    "654.df23b9a4.chunk.js.map": "/goit-react-hw-05-movies/static/js/654.df23b9a4.chunk.js.map",
-    "837.bc1efad3.chunk.js.map": "/goit-react-hw-05-movies/static/js/837.bc1efad3.chunk.js.map"
+    "859.24bd2fe2.chunk.js.map": "/goit-react-hw-05-movies/static/js/859.24bd2fe2.chunk.js.map",
+    "654.a4b80d71.chunk.js.map": "/goit-react-hw-05-movies/static/js/654.a4b80d71.chunk.js.map",
+    "837.c4333e27.chunk.js.map": "/goit-react-hw-05-movies/static/js/837.c4333e27.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.115238bb.css",
-    "static/js/main.db3edb59.js"
+    "static/js/main.4303028e.js"
   ]
 }
