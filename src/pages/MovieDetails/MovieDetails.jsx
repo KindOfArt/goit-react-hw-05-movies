@@ -7,13 +7,12 @@ import PosterImage from 'components/PosterImage/PosterImage';
 import Status from 'components/Status/Status';
 import Title from 'components/Title/Title';
 import useMovieDetails from 'hooks/useMovieDetails';
-import { memo } from 'react';
 import { useLocation } from 'react-router-dom';
 import {
-  DetailContainer,
   DescriptionThumb,
-  MovieDetailsThumb,
+  DetailContainer,
   InfoThumb,
+  MovieDetailsThumb,
 } from './MovieDetails.styled.js';
 
 const MovieDetails = () => {
@@ -46,4 +45,4 @@ const MovieDetails = () => {
   );
 };
 
-export default memo(MovieDetails);
+export default MovieDetails;
